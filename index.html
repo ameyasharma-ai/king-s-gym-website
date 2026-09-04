@@ -127,7 +127,10 @@
     </header>
 
     <!-- Mobile Slide-out Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-50   flex flex-col justify-between p-6 transform translate-x-full transition-transform duration-300 lg:hidden bg-[#09090b] border-l border-zinc-800">
+    
+    <!-- Mobile Menu Backdrop Overlay -->
+    <div id="menu-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[90] hidden transition-opacity duration-300"></div>
+<div id="mobile-menu" class="fixed inset-y-0 right-0 z-[100] w-full max-w-xs sm:max-w-sm bg-[#09090b] border-l border-zinc-800 text-white p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 lg:hidden shadow-2xl overflow-y-auto">
         <div class="flex items-center justify-between border-b border-zinc-800 pb-4">
             <div class="flex items-center gap-2.5">
                 <div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
@@ -864,7 +867,7 @@
     </footer>
 
     <!-- Sticky Mobile Bottom Action Bar -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0F1115]/95 backdrop-blur-lg border-t border-zinc-800 p-3 grid grid-cols-2 gap-3 shadow-2xl">
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0F1115]/95 backdrop-blur-lg border-t border-zinc-800 p-3 grid grid-cols-2 gap-3 shadow-2xl">
         <a href="tel:+08733079422" class="min-h-[48px] bg-zinc-800 hover:bg-zinc-700 text-white font-semibold rounded-xl flex items-center justify-center gap-2 border border-zinc-700 text-sm">
             <i data-lucide="phone" class="w-4 h-4 text-primary"></i>
             <span>Call Now</span>
@@ -903,6 +906,7 @@
         const menuToggle = document.getElementById('menu-toggle');
         const menuClose = document.getElementById('menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
+        const menuBackdrop = document.getElementById('menu-backdrop');
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
         function toggleMobileMenu() {
